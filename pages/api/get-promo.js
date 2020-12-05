@@ -1,11 +1,7 @@
 import { GoogleSpreadsheet } from "google-spreadsheet";
+import { credentials } from '../../utils'
 
 const doc = new GoogleSpreadsheet(process.env.SHEET_DOC_ID);
-
-const credentials = {
-    client_email: process.env.SHEET_CLIENT_EMAIL,
-    private_key: process.env.SHEET_PRIVATE_KEY
-}
 
 export default async (req, res) => {
   try {

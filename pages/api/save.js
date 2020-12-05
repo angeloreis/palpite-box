@@ -1,13 +1,9 @@
 import { GoogleSpreadsheet } from "google-spreadsheet";
-
 import moment from 'moment'
 
-const doc = new GoogleSpreadsheet(process.env.SHEET_DOC_ID);
+import { credentials } from '../../utils'
 
-const credentials = {
-  client_email: process.env.SHEET_CLIENT_EMAIL,
-  private_key: process.env.SHEET_PRIVATE_KEY
-}
+const doc = new GoogleSpreadsheet(process.env.SHEET_DOC_ID);
 
 const generateCoupon = () => {
   const codeBrute = parseInt(moment().format('YYMMDDHHmmssSSS')).toString(16).toUpperCase()
